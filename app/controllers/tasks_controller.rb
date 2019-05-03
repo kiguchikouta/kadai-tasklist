@@ -1,10 +1,12 @@
 class TasksController < ApplicationController
+before_action :set_task, only: [:show, :edit, :update, :destroy]
+
     def index
         @task = Task.all
     end
     
     def show
-        @task = Task.find(params[:id])
+        # @task = Task.find(params[:id])
     end
     
     def new
@@ -24,11 +26,11 @@ class TasksController < ApplicationController
     end
     
     def edit
-        @task = Task.find(params[:id])
+        # @task = Task.find(params[:id])
     end
     
     def update
-        @task = Task.find(params[:id])
+        # @task = Task.find(params[:id])
         # なぜかcreateと異なり、ストロングパラメータは使用しない
         # かわりに下のupdateで、ストロングパラメータを使用する（謎だが、仕様として暗記する）
         
@@ -42,7 +44,7 @@ class TasksController < ApplicationController
     end
     
     def destroy
-        @task = Task.find(params[:id])
+        # @task = Task.find(params[:id])
         @task.destroy
         
         flash[:success]='タスク削除完了！ゆっくり休みましょう'
@@ -55,4 +57,7 @@ class TasksController < ApplicationController
         params.require(:task).permit(:content)
     end
     
+    def set_task
+        @task = Task.find(params[:id])
+    end
 end
