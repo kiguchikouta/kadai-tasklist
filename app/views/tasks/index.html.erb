@@ -4,7 +4,7 @@
 <ul>
     <% @task.each do |task_nakami| %>
         <!--<li><%#= link_to task_nakami.content, task_nakami %></li>-->
-        <li><%= link_to task_nakami.id.to_s + '：' + task_nakami.content, task_nakami %></li>
+        <li><%= link_to task_nakami.id.to_s + '：' + task_nakami.content, task_nakami %> &gt; <%= task_nakami.status %></li>
     <% end %>
 </ul>
 
