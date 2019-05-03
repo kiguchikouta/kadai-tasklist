@@ -1,9 +1,7 @@
 <h2>ID番号:<%= @task.id %>　タスクの編集</h2>
 
-<h3>既存タスク</h3>
 <p><%= @task.content %></p>
 
-<h3>新規タスク</h3>
 <%= render 'tasks/form', task: @task %>
 <!--<%#= form_with(model:@task, local:true) do |f| %>-->
 <!--    <%#= f.text_field :content %>-->

@@ -20,8 +20,8 @@ before_action :set_task, only: [:show, :edit, :update, :destroy]
             flash[:success] = 'タスク登録完了！'
             redirect_to @task
         else
-            flash[:danger] = 'タスク登録失敗、やり直し'
-            render :new
+            flash.now[:danger] = 'タスク登録失敗、やり直し'
+            render 'new'
         end
     end
     
@@ -38,7 +38,7 @@ before_action :set_task, only: [:show, :edit, :update, :destroy]
             flash[:success]='タスク更新完了！'
             redirect_to @task
         else
-            flash[:danger]='タスク登録失敗、やり直し'
+            flash.now[:danger]='タスク登録失敗、やり直し'
             render :edit
         end
     end
