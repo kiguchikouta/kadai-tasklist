@@ -1,12 +1,8 @@
-<h1>タスク一覧をWeb上で管理するアプリケーション（試作）</h1>
-
 <h3>タスク一覧</h3>
 <ul>
-    <% @task.each do |task_nakami| %>
-        <!--<li><%#= link_to task_nakami.content, task_nakami %></li>-->
+    <% tasks.each do |task_nakami| %>
         <li><%= link_to task_nakami.id.to_s + '：' + task_nakami.content, task_nakami %> &gt; <%= task_nakami.status %></li>
     <% end %>
 </ul>
 
 <%= link_to '新規タスクの登録', new_task_path %>
-

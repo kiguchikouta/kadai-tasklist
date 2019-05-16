@@ -1,0 +1,12 @@
+<% if logged_in? %>
+  <div>
+    <%= render 'tasks/tasks', tasks: @tasks %>
+  </div>
+<% else %>
+  <div class="row">
+    <div class="offset-sm-4">
+        <p>ログイン：　<%= link_to 'Log in!', login_path, class: 'btn btn-success btn-sm' %></p>
+        <p>ユーザー登録がまだの方　<%= link_to 'Sign up!', signup_path, class: 'btn btn-primary btn-sm' %></p>
+    </div>
+  </div>
+<% end %>
